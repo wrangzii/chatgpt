@@ -2,9 +2,9 @@ package io.github.chatgpt.service.impl;
 
 import io.github.chatgpt.dto.ChatRequest;
 import io.github.chatgpt.exception.ChatgptException;
-import io.github.chatgpt.property.ChatgptProperties;
+import io.github.chatgpt.property.ChatGPTProperties;
 import io.github.chatgpt.dto.ChatResponse;
-import io.github.chatgpt.service.ChatgptService;
+import io.github.chatgpt.service.ChatGPTService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -16,15 +16,15 @@ import org.springframework.web.client.RestTemplate;
 
 @Slf4j
 @Service
-public class DefaultChatgptService implements ChatgptService {
+public class DefaultChatgptService implements ChatGPTService {
 
-    protected final ChatgptProperties chatgptProperties;
+    protected final ChatGPTProperties chatgptProperties;
 
     private final String URL = "https://api.openai.com/v1/completions";
 
     private final String AUTHORIZATION;
 
-    public DefaultChatgptService(ChatgptProperties chatgptProperties) {
+    public DefaultChatgptService(ChatGPTProperties chatgptProperties) {
         this.chatgptProperties = chatgptProperties;
         AUTHORIZATION = "Bearer " + chatgptProperties.getApiKey();
     }

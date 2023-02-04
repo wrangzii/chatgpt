@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @ConfigurationProperties(prefix = "chatgpt")
-public class ChatgptProperties {
+public class ChatGPTProperties {
 
     //apiKey
     private String apiKey = "";

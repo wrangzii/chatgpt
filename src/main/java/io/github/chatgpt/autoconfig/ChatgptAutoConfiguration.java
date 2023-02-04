@@ -1,7 +1,7 @@
 package io.github.chatgpt.autoconfig;
 
-import io.github.chatgpt.property.ChatgptProperties;
-import io.github.chatgpt.service.ChatgptService;
+import io.github.chatgpt.property.ChatGPTProperties;
+import io.github.chatgpt.service.ChatGPTService;
 import io.github.chatgpt.service.impl.DefaultChatgptService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,19 +12,19 @@ import org.springframework.context.annotation.Configuration;
 
 @Slf4j
 @Configuration
-@EnableConfigurationProperties(ChatgptProperties.class)
+@EnableConfigurationProperties(ChatGPTProperties.class)
 public class ChatgptAutoConfiguration {
 
     @Autowired
-    private ChatgptProperties chatgptProperties;
+    private ChatGPTProperties chatgptProperties;
 
     public ChatgptAutoConfiguration(){
         log.debug("chatgpt-springboot-starter loaded.");
     }
 
     @Bean
-    @ConditionalOnMissingBean(ChatgptService.class)
-    public ChatgptService chatgptService(){
+    @ConditionalOnMissingBean(ChatGPTService.class)
+    public ChatGPTService chatgptService(){
         return new DefaultChatgptService(chatgptProperties);
     }
 
