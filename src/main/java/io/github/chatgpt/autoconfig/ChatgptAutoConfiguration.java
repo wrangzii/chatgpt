@@ -13,12 +13,12 @@ import org.springframework.context.annotation.Configuration;
 @Slf4j
 @Configuration
 @EnableConfigurationProperties(ChatGPTProperties.class)
-public class ChatgptAutoConfiguration {
+public class ChatGPTAutoConfiguration {
 
     @Autowired
     private ChatGPTProperties chatgptProperties;
 
-    public ChatgptAutoConfiguration(){
+    public ChatGPTAutoConfiguration(){
         log.debug("chatgpt-springboot-starter loaded.");
     }
 
